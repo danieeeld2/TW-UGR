@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h2>Registro de Usuarios</h2>
+        <!-- Opcional 1: Para probar maxlength y size sería: 
+            <label for="idnombre">Nombre:</label>
+            <input type="text" id="idnombre" name="nombre" size="30" maxlength="50" placeholder="Este campo es obligatorio" required>
+            ...
+        -->
+        <!-- Puedes añadir novalidate en el form para comprobar validaciones en el servidor durante desarrollo-->
+        <form action="procesar.php" method="get" >
+            <label for="idnombre">Nombre:</label>
+            <input type="text" id="idnombre" name="nombre" placeholder="Este campo es obligatorio" required pattern="^[A-Z][a-zA-Z]*$">
+            <label for="idapellidos">Apellidos:</label>
+            <input type="text" id="idapellidos" name="apellidos" placeholder="Este campo es opcional" pattern="^[A-Z][a-zA-Z]*$">
+            <label for="idclave">Clave de acceso:</label>
+            <input type="password" id="idclave" name="clave" placeholder="Introduzca una clave">
+            <label for="idnacionalidad">Nacionalidad:</label>
+            <input type="text" id="idnacionalidad" name="nacionalidad" value="España">
+            <!-- Si pasamos el E-mail en blanco, no me da error, ahora si pongo
+            algo sin @, me salta una notificacion emergente, indicando que tengo que rellenar
+            este campo con un email. Desactivé novalidate para probarlo-->
+            <label for="idemail">E-mail:</label>
+            <input type="email" id="idemail" name="email">
+            <!-- Otra posible solucion con label es:
+                <h2>Registro de Usuarios</h2>
+                <form>
+                    <label>Nombre:
+                    <input type="text" name="nombre">
+                    </label>
+                    ...
+                </form>
+                La utilidad de la forma que hemos usado label es que mantener
+                distintos tags para texto y control, pudiendo aplicar estilos
+                por separados.
+            -->
+            <input type="submit" value="Enviar datos">
+        </form>
+    </section>
+</body>
+</html>
