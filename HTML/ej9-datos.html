@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            <div>
+                <h1>Hotel Alhambra</h1>
+                <img src="img/logo-hotel.png" alt="Logo del hotel">
+            </div>
+            <aside>
+                <p>Informacion de Contacto</p>
+                <img src="" alt="Informacion de Contacto">
+            </aside>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="ej9-inicio.html">Inicio</a></li>
+                <li><a href="ej9-habitaciones.html">Habitaciones</a></li>
+                <li><a href="ej9-servicios.html">Servicios</a></li>
+                <li><a href="ej9-reservas.html">Reservas</a></li>
+                <li><a href="ej9-datos.html">Datos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Registro de Usuarios</h2>
+            <form action="procesar2.php" method="post" enctype="multipart/form-data">
+                <p>
+                    <label for="idnombre">Nombre:</label>
+                    <input type="text" id="idnombre" name="nombre" placeholder="Este campo es obligatorio" required pattern="^[A-Z][a-zA-Z]*$">
+                </p>
+                <p>
+                    <label for="idapellidos">Apellidos:</label>
+                    <input type="text" id="idapellidos" name="apellidos" placeholder="Este campo es opcional" pattern="^[A-Z][a-zA-Z]*$">
+                </p>
+                <p>
+                    <label for="idclave">Clave de acceso:</label>
+                    <input type="password" id="idclave" name="clave" placeholder="Introduzca una clave">
+                </p>
+                <p>
+                    <label for="idnacionalidad">Nacionalidad:</label>
+                    <input type="text" id="idnacionalidad" name="nacionalidad" value="España">
+                </p>
+                <p>
+                    <label for="idemail">E-mail:</label>
+                    <input type="email" id="idemail" name="email">
+                </p>
+                <p>
+                    <label>Sexo:
+                    <select name="sexo">
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                        <option selected>No deseo responder</option>
+                    </select></label>
+                </p>
+                <p>
+                    <label>Tratamiento de datos:
+                        <select name="tratamiento">
+                            <option value="TOTAL">Acepta el almacenamiento de mis datos y el envío a terceros</option>
+                            <option value="PARCIAL">Acepta el almacenamiento de mis datos pero no el envío a terceros</option>
+                            <option value="NINGUNO">No acepta el almacenamiento ni el envío de datos a terceros</option>
+                        </select></label>
+                </p>
+                <div id="idioma">
+                    <p>Idioma para comunicaciones:</p>
+                    <label><input type="radio" name="idioma-comunicacion" value="español" checked/>Español</label>
+                    <label><input type="radio" name="idioma-comunicacion" value="ingles"/>Inglés</label>
+                    <label><input type="radio" name="idioma-comunicacion" value="frances"/>Francés</label>
+                </div>
+                <div id="preferencia-habitacion">
+                    <p>Preferencia de habitación:</p>
+                    <label><input type="checkbox" name="preferencia[]" value="fumadores"/>Para fumadores</label>
+                    <label><input type="checkbox" name="preferencia[]" value="mascotas"/>Que permita mascotas</label>
+                    <label><input type="checkbox" name="preferencia[]" value="vistas"/>Con vistas</label>
+                    <label><input type="checkbox" name="preferencia[]" value="moqueta"/>Con moqueta</label>
+                </div>
+                <p>
+                    <label for="nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="nacimiento" name="fecha-nacimiento">
+                </p>
+                <p>
+                    <label for="visita">Semana preferida para su visita:</label>
+                    <input type="week" id="visita" name="semana-visita">
+                </p>
+                <p>
+                    <label for="fotografia">Fotografía:</label>
+                    <input type="file" id="fotografia" name="fotografia">
+                </p>
+                <p><input type="hidden" name="version_formulario" value="3.0"/></p>
+                <p><input type="submit" value="Enviar datos"></p>
+            </form>
+        </section>
+    </main>
+
+    <aside>
+        <div>
+            <h2>Inicio de sesión y perfil de usuario</h2>
+        </div>
+        <section>
+            <h2>Información de Interés (Información de Segundo Nivel)</h2>
+            <ul>
+                <li><a href="">Info 1</a></li>
+                <li><a href="">Info 2</a></li>
+            </ul>
+        </section>
+    </aside>
+
+    <footer>
+        <div>
+            <p>Información de autores</p>
+        </div>
+        <div>
+            <p>Documentación</p>
+        </div>
+        <div>
+            <p>Copyright</p>
+        </div>
+    </footer>
+</body>
+</html>
