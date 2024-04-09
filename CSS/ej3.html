@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ftecnica {
+        color: gold;
+      }
+      section {
+        color: green;
+      }
+      li > span:not(:first-child) {
+        color: aqua;
+      }
+      span:nth-child(2) {
+        color: red;
+      }
+      li span {
+        color: blue;
+      }
+      .enfasis {
+        color: pink;
+      }
+      span < li:not(:nth-last-child) {
+        color: yellow;
+      }
+      li:nth-child(2n) {
+        color: salmon;
+      }
+      #bryan {
+        color: gray;
+      }
+      section > ul > li.main {
+        color: royalblue;
+      }
+      #ftecnica h2 {
+        color: plum;
+      }
+      section h2 {
+        color: skyblue;
+      }
+      section#ftecnica li li:last-child {
+        color: sienna;
+      }
+      #betsy {
+        color: darkblue;
+      }
+      main > section > section > ul > li:last-child {
+        color: silver;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Breaking Bad</h1>
+      <h2>Serie de televisión</h2>
+    </header>
+    <main>
+      <section>
+        <h2>Argumento:</h2>
+        <p>
+          Walter White (Bryan Cranston) es un frustrado profesor de química en
+          un instituto, padre de un joven discapacitado y con una mujer (Anna
+          Gunn) embarazada.
+        </p>
+      </section>
+      <section id="ftecnica">
+        <h2>Ficha técnica:</h2>
+        <ul>
+          <li>Año: <span class="enfasis">2008</span></li>
+          <li>País: <span>EEUU</span></li>
+          <li>
+            Idiomas:
+            <span>Inglés</span>
+            ,
+            <span>Español</span>
+          </li>
+          <li>
+            <span>Productores ejecutivos:</span>
+            <ul>
+              <li>Vince Gilligan</li>
+              <li>Mark Johnson</li>
+              <li>Michelle MacLaren</li>
+            </ul>
+          </li>
+        </ul>
+        <section>
+          <h2>Protagonistas:</h2>
+          <ul>
+            <li id="bryan" class="main">Bryan Cranston</li>
+            <li>Aaron Paul</li>
+            <li>Anna Gunn</li>
+            <li>Dean Norris</li>
+            <li id="betsy">Betsy Brandt</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Datos obtenidos de
+        <span class="enfasis">Wikipedia</span>
+        y otros sitios
+      </p>
+    </footer>
+  </body>
+</html>
