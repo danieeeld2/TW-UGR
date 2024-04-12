@@ -1,0 +1,38 @@
+.galeria {
+  max-width: 700px;
+  margin: 0 auto;
+  border: 5px solid cornflowerblue;
+  background-color: lightsteelblue;
+}
+
+.fila {
+  display: block;
+  margin: 5px;
+  background-color: azure;
+  font-size: 0; /* Elimina el espacio entre elementos en línea */
+  text-align: center;
+}
+
+.imagen {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  background-color: beige;
+  text-align: center;
+  width: calc(33.33% - 32px); /* Ajuste del ancho */
+  font-size: 16px; /* Restaura el tamaño de la fuente */
+  vertical-align: bottom;
+}
+
+.imagen img {
+  display: block;
+  border: 1px solid lightgrey;
+  padding: 5px;
+  background-color: white;
+  width: calc(100% - 12px); /* Ancho Máximo - Padding */
+}
+
+.imagen span {
+  font-style: italic;
+}

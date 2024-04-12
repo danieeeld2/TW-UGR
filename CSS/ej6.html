@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      nav {
+        border: 5px solid black;
+        width: 80%; 
+        margin: 0 auto; 
+      }
+      p {
+        display: inline-block;
+        border: 5px solid black;
+        background-color: lightgray;
+        box-sizing: border-box;
+      }
+      /* Consideramos 100% del nav y le restamos la suma de los márgenes de final y primero.
+      Con eso obtenemos el tamaño del nav y, ahora, simplemente multiplicamos por los porcentajes
+      que queramos que ocupe cada elemento. */
+      .primero {
+        border-color: red;
+        width: calc((100% - 40px) *0.2);
+        text-align: left;
+      }
+      .medio {
+        border-color: green; 
+        width: calc((100% - 40px) *0.6);
+        text-align: center; 
+      }
+      .final {
+        border-color: blue; 
+        width: calc((100% - 40px) *0.2);
+        text-align: right;
+      }
+      p.primero {
+        margin-left: 20px;
+      }
+      p.final {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <p class="primero">Anterior</p><p class="medio">Medio</p><p class="final">Siguiente</p>
+    </nav>
+  </body>
+</html>

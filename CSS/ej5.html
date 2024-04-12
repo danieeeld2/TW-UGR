@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      nav {
+        border: 5px solid black;
+        width: 80%; /* Establecemos un ancho */
+        margin: 0 auto; /* Centramos el nav */
+      }
+      p {
+        display: inline-block;
+        border: 5px solid black; /* Establecemos borde de forma  general */
+        background-color: lightgray; /* Establecemos un color de fondo */
+        
+        /* Sive para que en el ancho y alto incluya contenido, padding y borde como todo un elemento.
+        De normal con content-box solo toma en cuenta el contenido del elemento, por lo que no cabría
+        todo los elementos en la misma línea*/
+        box-sizing: border-box;
+      }
+      .primero {
+        border-color: red; /* Cambiamos el color del borde */
+        width: 20%; /* Establecemos un ancho */
+        text-align: left; /* Alineamos el texto a la izquierda */
+      }
+      .medio {
+        border-color: green; /* Cambiamos el color del borde */
+        width: 60%; /* Establecemos un ancho */
+        text-align: center; /* Alineamos el texto al centro */
+      }
+      .final {
+        border-color: blue; /* Cambiamos el color del borde */
+        width: 20%; /* Establecemos un ancho */
+        text-align: right; /* Alineamos el texto a la derecha */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <!-- Si formateas poniendo los <p> en líneas distintas, te genera un pequeño espacio
+            blanco entre ellos en el HTML y el ejercicio sería incorrecto -->
+      <p class="primero">Anterior</p><p class="medio">Medio</p><p class="final">Siguiente</p>
+    </nav>
+  </body>
+</html>
