@@ -13,7 +13,7 @@
             <fieldset class="datos-personales">
                 <legend>Datos personales</legend>
                 <div class="fila">
-                    <div class="columna">
+                    <div class="columna" id="col1">
                         <p>
                             <label for="idnombre">Nombre:</label>
                             <input type="text" id="idnombre" name="nombre" placeholder="(Obligatorio)" required pattern="^[A-Z][a-zA-Z]*$">
@@ -23,7 +23,7 @@
                             <input type="text" id="idapellidos" name="apellidos" pattern="^[A-Z][a-zA-Z]*$">
                         </p>
                     </div>
-                    <div class="columna">
+                    <div class="columna" id="col2">
                         <p>
                             <label for="fotografia">Fotografía:</label>
                             <input type="file" id="fotografia" name="fotografia">
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="fila">
-                    <div class="columna">
+                    <div class="columna" id="col3">
                         <p>
                             <label for="dni">DNI:</label>
                             <input type="text" id="dni" name="dni" pattern="^[0-9]{8}[A-Z]$">
@@ -41,13 +41,13 @@
                             <input type="date" id="nacimiento" name="fecha-nacimiento">
                         </p>
                     </div>
-                    <div class="columna">
+                    <div class="columna" id="col4">
                         <p>
                             <label for="idnacionalidad">Nacionalidad:</label>
                             <input type="text" id="idnacionalidad" name="nacionalidad" value="España">
                         </p>
                         <p>
-                            <label>Sexo:
+                            <label id="sexo">Sexo:
                             <select name="sexo">
                                 <option>Masculino</option>
                                 <option>Femenino</option>
@@ -60,7 +60,7 @@
             <fieldset class="datos-acceso">
                 <legend>Datos de acceso</legend>
                 <div class="fila">
-                    <div class="columna">
+                    <div class="columna" id="col5">
                         <p>
                             <label for="idemail">E-mail:</label>
                             <input type="email" id="idemail" name="email">
@@ -68,13 +68,13 @@
                     </div>
                 </div>
                 <div class="fila">
-                    <div class="columna">
+                    <div class="columna" id="col6">
                         <p>
                             <label for="idclave">Clave de acceso:</label>
                             <input type="password" id="idclave" name="clave" placeholder="Introduzca una clave">
                         </p>
                     </div>
-                    <div class="columna">
+                    <div class="columna" id="col7">
                         <p>
                             <label for="idclave2">Repita la clave:</label>
                             <input type="password" id="idclave2" name="clave-repetida" placeholder="Introduzca la misma clave">
