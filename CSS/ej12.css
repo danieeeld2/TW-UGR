@@ -1,0 +1,98 @@
+.registro-usuarios h2 {
+  background-color: steelblue;
+  color: white;
+  padding: 5px;
+}
+
+.registro-usuarios fieldset {
+  /* background-color: paleturquoise; */
+  background-color: lightcyan;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.registro-usuarios .datos-personales:hover {
+  border: 6px solid steelblue;
+}
+
+.registro-usuarios .datos-acceso:hover {
+  border: 6px solid steelblue;
+}
+
+.registro-usuarios .datos-personales:hover::after {
+  content: "En cumplimiento del Real Decreto 933/2021, de 26 de octubre, estos datos serán comunicados al centro de datos de la Dirección General de Policía";
+  display: block;
+  color: steelblue;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.registro-usuarios .datos-acceso:hover::after {
+  content: "Usted podrá acceder al sistema en cualquier momento mediante estos datos. Asegurese de escribir una clave que pueda recordar con posterioridad. Si la olvida siempre podrá recuperarla a través de su correo electrónico";
+  display: block;
+  color: steelblue;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.registro-usuarios legend {
+  background-color: darkcyan;
+  color: black;
+  font-weight: bold;
+  padding: 5px 2px;
+  border: 1px solid black;
+}
+
+.fila {
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  background-color: paleturquoise;
+  font-size: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.columna {
+  font-size: 12px;
+  float: left; /* Para que las columnas se coloquen una al lado de la otra */
+  box-sizing: border-box; 
+  margin-left: 5px;
+}
+
+.borde {
+  border-left: 3px solid cadetblue;
+}
+
+.preferencias label {
+  display: block;
+  margin: 5px;
+}
+
+.preferencias #idioma {
+  padding: 3px;
+  margin-right: 40px;
+}
+
+.preferencias #preferencia-habitacion {
+  margin-left: 10px;
+  padding: 3px;
+}
+
+.preferencias p {
+  font-weight: bold;
+}
+
+.boton {
+  text-align: center;
+}
+
+.boton input {
+  background-color: darkcyan;
+  color: black;
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid black;
+  cursor: pointer;
+}
