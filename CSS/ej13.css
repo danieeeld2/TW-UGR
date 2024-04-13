@@ -1,0 +1,117 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Alineamos horizontalmente */
+    align-items: center; 
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+.logo-image img {
+    width: 150px;
+    margin-right: 10px; 
+}
+
+header h1 {
+    margin: 0;
+    color: black;
+}
+
+/* ------------------- */
+
+nav {
+    background-color: lightpink;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* ------------------- */
+
+.container {
+    display: flex; 
+}
+
+main {
+    flex: 1; /* Hacemos que main ocupe todo el espacio restante */
+}
+
+aside {
+    flex-grow: 1; /* Permitimos que el aside crezca */
+    flex-basis: 20%; /* Establecemos la base del aside en el 20% */
+    max-width: 20%; /* Establece el máximo en el 20% */
+    background-color: gray;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+}
+
+aside li {
+    margin: 0;
+}
+
+aside li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ------------------- */
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: self-end;
+}
+
+.imagen {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    background-color: beige;
+    align-items: center; 
+    width: 170px;
+}
+
+.imagen img {
+    flex: 1; /* Hacemos que la imagen crezca para rellenar el espacio disponible */
+    border: 1px solid lightgrey;
+    padding: 5px;
+    background-color: white;
+    max-width: calc(100% - 12px);
+}
+
+.imagen figcaption {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+/* ------------------- */
+
+footer {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+}
