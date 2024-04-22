@@ -1,0 +1,272 @@
+header {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; 
+    background-color: #D7C0AE;
+    padding: 10px;
+}
+
+.sesion-pantalla-reducida {
+    display: none;
+}
+
+.contacto-reducido {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alineamos verticalmente dentro del logo */
+}
+
+.logo-image img {
+    width: 350px;
+    margin-right: 10px; 
+}
+
+.contact-info {
+    display: flex;
+    align-items: center; /* Alineamos verticalmente dentro del aside */
+}
+
+.contact-info img {
+    width: 250px;
+    margin-right: 10px;
+}
+
+header h1 {
+    margin: 0;
+    color: black;
+}
+
+nav {
+    background-color: #EEE3CB;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: #D7C0AE;
+    text-decoration-thickness: 4px;
+}
+
+.container {
+    display: flex; 
+}
+
+.main {
+    flex: 1; /* Hacemos que main ocupe todo el espacio restante */
+}
+
+.zona-lateral {
+    flex-grow: 1; /* Permitimos que el aside crezca */
+    flex-basis: 20%; 
+    max-width: 20%; 
+    background-color: #B7C4CF;
+    margin-left: 10px;
+}
+
+aside h2 {
+    margin: 0;
+    padding: 10px;
+    color: black;
+    text-align: center;
+    font-size: 22px;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+}
+
+aside li {
+    margin: 0;
+}
+
+aside li a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    background-color: #967E76;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+footer .fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fila div {
+    flex: 1;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-decoration-thickness: 4px;
+}
+
+/* ------------------- */
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: self-end;
+}
+
+.imagen {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    background-color: #EEE3CB;
+    align-items: center; 
+    width: 320px;
+}
+
+.imagen img {
+    flex: 1; /* Hacemos que la imagen crezca para rellenar el espacio disponible */
+    border: 1px solid lightgrey;
+    padding: 5px;
+    background-color: white;
+    max-width: calc(100% - 12px);
+}
+
+.tarjeta {
+    background-color: #f1d0a5;
+    border: 2px solid rgb(134, 93, 45);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.tabla-reserva {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+/* ------------------- Media Queries ------------------- */
+
+@media (max-width: 900px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sesion-pantalla-reducida {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sesion-pantalla-reducida a {
+        color: #6d7983;
+        font-weight: bold;
+    }
+
+    .sesion-pantalla-reducida a:hover {
+        text-decoration: underline;
+        text-decoration-color: #B7C4CF;
+        text-decoration-thickness: 4px;
+    }
+
+    .informacion-2nivel h2 {
+        font-size: 17px;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .zona-lateral {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        order: 1;
+    }
+
+    .inicio-sesion {
+        display: none;
+    }
+
+    .imagen {
+        width: 100%;
+    }
+
+    #bañera {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .zona-lateral {
+        display: none;
+    }
+
+    .logo-image img {
+        width: 200px;
+    }
+
+    .contact-info img {
+        display: none;
+    }
+
+    .imagen {
+        width: 100%;
+    }
+    
+    .contacto-reducido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacto-reducido img {
+        max-width: 200px;
+    }
+}
