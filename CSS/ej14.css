@@ -73,6 +73,7 @@ nav a:hover {
 
 .main {
     flex: 1; /* Hacemos que main ocupe todo el espacio restante */
+    margin: 10px;
 }
 
 .zona-lateral {
@@ -177,6 +178,95 @@ footer a:hover {
     justify-content: center;
     align-self: center;
 }
+
+/* -------------------*/
+
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    border: 1px solid black;
+    background-color: #D7C0AE;
+    padding: 2px;
+    margin:5px;
+}
+
+fieldset p {
+    margin: 10px 0;
+}
+
+fieldset label {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+fieldset input[type="text"],
+fieldset input[type="email"],
+fieldset input[type="password"],
+fieldset input[type="date"],
+fieldset input[type="file"] {
+    width: calc(100% - 170px);
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.preferencias {
+    display: flex;
+    flex-direction: row;
+}
+
+.preferencias label {
+    font-weight: normal;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+.preferencias p {
+    font-weight: bold;
+}
+
+#idioma,
+#preferencia-habitacion {
+    display: flex;
+    flex-direction: column;
+}
+
+#idioma {
+    width: 35%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#preferencia-habitacion {
+    flex:1;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+
+.boton input {
+    background-color: #D7C0AE;
+    color: black;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
 
 /* ------------------- Media Queries ------------------- */
 
