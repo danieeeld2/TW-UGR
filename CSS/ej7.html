@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+        background-color: bisque;
+        overflow: hidden; /* Para que el contenedor se expanda conteniendo los ele
+                            elementos flotantes */
+      }
+
+      .menu ul {
+        float: right; /* Alineamos la lista a la derecha */
+        list-style: none; /* Quitamos los puntos de la lista */
+      }
+
+      .menu li {
+        float: left; /* Alineamos los elementos a la izquierda */
+        background-color: deepskyblue;
+        border-radius: 5px; /* Redondeamos los bordes */
+        margin-right: 13px;
+      }
+
+      .menu li:hover { 
+        background-color: brown;
+        border-radius: 50px; 
+        transform: scale(1.1);
+      }
+
+      .menu li a {
+        display: block; /* Hacemos que el enlace ocupe todo el espacio del contenedor */
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none; /* Quitamos el subrayado de los enlaces */
+      }
+
+      .activo {
+        background-color: blue;
+        border-radius: 5px;
+      }
+
+      .activo:hover {
+        background-color: brown;
+        border-radius: 50px;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#" class="activo">Sobre mi</a></li>
+        <li><a href="#">Formación</a></li>
+        <li><a href="#">Aficiones</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div>
+      <p>... continua la página ...</p>
+    </div>
+  </body>
+</html>

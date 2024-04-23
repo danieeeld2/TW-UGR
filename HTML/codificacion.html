@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Al ejecutar file codificacion.html obtenemos la salida codificacion.html: HTML document, ISO-8859 text 
+  Esta codificación es también conocida como Latin-1 y es una codificación del alfabeto español que 
+  incluye los diacríticos. Está codificación fue bastante usada en el pasado, pero cada vez está
+  más en deshuso, por lo que, investigando por internet, he visto que hay algunos navegadores que ya no 
+  soportan esta codificación. por lo qué, lo más sensato, sería cambiar la codificación del fichero a UTF-8.
+  Para ello, el meta charset y la codificación del fichero han de coincidir. Para cambiar la codificación del fichero
+  desde una terminal linux, ejecutamos el siguiente comando:
+    iconv --from-code ISO-8859-1 --to-code UTF-8 --output codificacion_utf8.html codificacion.html
+  Ahora tendremos un nuevo fichero html con dicha codificación, llamado codificacion_utf8.html-->
+  <meta charset="UTF-8">
+  <title>Informaci�n</title>
+</head>
+<body>
+  <p>Est�s en la asignatura Tecnolog�as Web. Cada a�o se imparten contenidos de programaci�n web con HTML+CSS+PHP. La documentaci�n tiene � Copyright.</p>
+  <p>Habr�s observado que el texto se ve mal �porqu�?</p>
+  <p>Temas relacionados:</p>
+  <ul>
+    <li>Codificaci�n de los caracteres del documento</li> 
+    <li>Uso de "character entities"</li>
+  </ul>
+</body>
+</html>

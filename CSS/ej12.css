@@ -1,0 +1,208 @@
+.registro-usuarios h2 {
+  background-color: steelblue;
+  color: white;
+  padding: 5px;
+}
+
+.registro-usuarios fieldset {
+  /* background-color: paleturquoise; */
+  background-color: lightcyan;
+  border: 1px solid black;
+  margin-bottom: 15px;
+}
+
+.registro-usuarios .datos-personales:hover {
+  border: 6px solid steelblue;
+}
+
+.registro-usuarios .datos-acceso:hover {
+  border: 6px solid steelblue;
+}
+
+.registro-usuarios .datos-personales:hover::after {
+  content: "En cumplimiento del Real Decreto 933/2021, de 26 de octubre, estos datos serán comunicados al centro de datos de la Dirección General de Policía";
+  display: block;
+  color: steelblue;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.registro-usuarios .datos-acceso:hover::after {
+  content: "Usted podrá acceder al sistema en cualquier momento mediante estos datos. Asegurese de escribir una clave que pueda recordar con posterioridad. Si la olvida siempre podrá recuperarla a través de su correo electrónico";
+  display: block;
+  color: steelblue;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.registro-usuarios legend {
+  background-color: darkcyan;
+  color: black;
+  font-weight: bold;
+  padding: 5px 2px;
+  border: 1px solid black;
+}
+
+.fila {
+  display: block;
+  margin: 5px;
+  padding: 5px;
+  background-color: paleturquoise;
+  font-size: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.columna {
+  font-size: 12px;
+  float: left; /* Para que las columnas se coloquen una al lado de la otra */
+  box-sizing: border-box; 
+  margin-left: 5px;
+}
+
+.datos-personales .columna p {
+  text-align: left;
+}
+
+.datos-personales .columna label {
+  display: inline-block;
+  width: 130px;
+  text-align: right;
+}
+
+.datos-personales .columna input {
+  width: calc(100% - 160px);
+  margin-left: 3px;
+}
+
+.datos-personales .columna select {
+  width: calc(100% - 160px);
+  margin-left: 3px;
+}
+
+.datos-acceso .columna label {
+  display: inline-block;
+  width: 130px;
+  text-align: right;
+}
+
+.datos-acceso .columna input {
+  width: calc(100% - 160px);
+  margin-left: 3px;
+}
+
+#col1 {
+  width: 55%;
+  border-right: 3px solid cadetblue;
+}
+
+#col2 {
+  width: 30%;
+}
+
+#col2 label {
+  display: block;
+}
+
+#col2 input {
+  margin-left: 11%;
+  padding-top: 10px;
+}
+
+#col3 {
+  width: 35%;
+}
+
+#col4 {
+  width: 45%;
+}
+
+#col4 select {
+  width: 140px;
+}
+
+#col4 #sexo {
+  margin-left: 75px;
+  width: 200px;
+}
+
+#col5 {
+  width: 75%;
+}
+
+#col6 {
+  width: 30%;
+}
+
+#col7 {
+  width: 45%;
+}
+
+#col7 p {
+  text-align: left;
+}
+
+#idnombre {
+  width: 250px;
+}
+
+#dni {
+  width: 250px;
+}
+
+#nacimiento {
+  width: 120px;
+}
+
+#idnacionalidad{
+  width: 250px;
+}
+
+#idemail {
+  width: 750px;
+}
+
+#col5 p {
+  text-align: left;
+}
+
+#idclave2 {
+  width: 350px;
+}
+
+.borde {
+  border-left: 3px solid cadetblue;
+}
+
+.preferencias label {
+  display: block;
+  margin: 5px;
+}
+
+.preferencias #idioma {
+  padding: 3px;
+  margin-right: 40px;
+}
+
+.preferencias #preferencia-habitacion {
+  margin-left: 10px;
+  padding: 3px;
+}
+
+.preferencias p {
+  font-weight: bold;
+}
+
+.boton {
+  text-align: center;
+}
+
+.boton input {
+  background-color: darkcyan;
+  color: black;
+  padding: 5px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid black;
+  cursor: pointer;
+}

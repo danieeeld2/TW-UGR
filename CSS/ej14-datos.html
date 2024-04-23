@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ej14.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-image">
+                <img src="img/logo-hotel.png" alt="Logo del hotel">
+            </div>
+            <h1>Hotel Alhambra</h1>
+        </div>
+        <aside class="contact-info">
+            <img src="img/contacto.png" alt="Datos de Contacto">
+        </aside>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="ej14-inicio.html">Inicio</a></li>
+            <li><a href="ej14-habitaciones.html">Habitaciones</a></li>
+            <li><a href="ej14-servicios.html">Servicios</a></li>
+            <li><a href="ej14-reservas.html">Reservas</a></li>
+            <li><a href="ej14-datos.html">Datos</a></li>
+        </ul>
+        <ul class="sesion-pantalla-reducida">
+            <li><a href="">LogIn</a></li>
+        </ul>
+    </nav>
+
+    <!-- No coloco las imágenes y los enlaces de interés en main, porque este tag está reservado
+    para la información que está directamente relacionado con el tema de la página, que, en este caso,
+    sería presentar el hotel -->
+
+    <div class="container">
+        <div class="main">
+            <main>
+                <section class="registro-usuarios">
+                    <h2>Registro de Usuarios</h2>
+                    <form action="procesar2.php" method="post" enctype="multipart/form-data">
+                        <fieldset class="datos-personales">
+                            <legend>Datos personales</legend>
+                            <p>
+                                <label for="idnombre">Nombre:</label>
+                                <input type="text" id="idnombre" name="nombre" placeholder="(Obligatorio)" required pattern="^[A-Z][a-zA-Z]*$">
+                            </p>
+                            <p>
+                                <label for="idapellidos">Apellidos:</label>
+                                <input type="text" id="idapellidos" name="apellidos" pattern="^[A-Z][a-zA-Z]*$">
+                            </p>
+                            <p>
+                                <label for="fotografia">Fotografía:</label>
+                                <input type="file" id="fotografia" name="fotografia">
+                            </p>
+                            <p>
+                                <label for="dni">DNI:</label>
+                                <input type="text" id="dni" name="dni" pattern="^[0-9]{8}[A-Z]$">
+                            </p>
+                            <p>
+                                <label for="nacimiento">F. nacimiento:</label>
+                                <input type="date" id="nacimiento" name="fecha-nacimiento">
+                            </p>
+                            <p>
+                                <label for="idnacionalidad">Nacionalidad:</label>
+                                <input type="text" id="idnacionalidad" name="nacionalidad" value="España">
+                            </p>
+                            <p>
+                                <label id="sexo">Sexo:
+                                <select name="sexo">
+                                    <option>Masculino</option>
+                                    <option>Femenino</option>
+                                    <option selected>No deseo responder</option>
+                                </select></label>
+                            </p>
+                        </fieldset>
+                        <fieldset class="datos-acceso">
+                            <legend>Datos de acceso</legend>
+                            <p>
+                                <label for="idemail">E-mail:</label>
+                                <input type="email" id="idemail" name="email">
+                            </p>
+                            <p>
+                                <label for="idclave">Clave de acceso:</label>
+                                <input type="password" id="idclave" name="clave" placeholder="Introduzca una clave">
+                            </p>
+                            <p>
+                                <label for="idclave2">Repita la clave:</label>
+                                <input type="password" id="idclave2" name="clave-repetida" placeholder="Introduzca la misma clave">
+                            </p>
+                        </fieldset>
+                        <fieldset class="preferencias">
+                            <legend>Preferencias</legend>
+                            <div id="idioma">
+                                <p>Idioma para comunicaciones:</p>
+                                <label><input type="radio" name="idioma-comunicacion" value="español" checked/>Español</label>
+                                <label><input type="radio" name="idioma-comunicacion" value="ingles"/>Inglés</label>
+                                <label><input type="radio" name="idioma-comunicacion" value="frances"/>Francés</label>
+                            </div>
+                            <div id="preferencia-habitacion">
+                                <p>Preferencia de habitación:</p>
+                                <label><input type="checkbox" name="preferencia[]" value="fumadores"/>Para fumadores</label>
+                                <label><input type="checkbox" name="preferencia[]" value="mascotas"/>Que permita mascotas</label>
+                                <label><input type="checkbox" name="preferencia[]" value="vistas"/>Con vistas</label>
+                                <label><input type="checkbox" name="preferencia[]" value="moqueta"/>Con moqueta</label>
+                            </div>
+                        </fieldset>
+                        <p>
+                            <label>Tratamiento de datos:
+                                <select name="tratamiento">
+                                    <option value="TOTAL">Acepta el almacenamiento de mis datos y el envío a terceros</option>
+                                    <option value="PARCIAL">Acepta el almacenamiento de mis datos pero no el envío a terceros</option>
+                                    <option value="NINGUNO">No acepta el almacenamiento ni el envío de datos a terceros</option>
+                                </select></label>
+                        </p>
+                        <div class="boton">
+                            <input type="submit" value="Enviar datos" id="boton-enviar">
+                        </div>
+                    </form>
+                </section>
+            </main>
+        </div>
+    
+        <aside class="zona-lateral">
+            <!-- Creado de cara a la práctica final. Dejp la estructura, pero falta rellenar información -->
+            <div class="inicio-sesion">
+                <h2>Inicio de sesión y perfil de usuario</h2>
+            </div>
+            <section class="informacion-2nivel">
+                <h2>Información de Interés (Información de Segundo Nivel)</h2>
+                <ul>
+                    <li><a href="">Info 1</a></li>
+                    <li><a href="">Info 2</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+    <footer>
+        <!-- Creado de cara a la práctica final. Dejp la estructura, pero falta rellenar información -->
+        <div class="fila">
+            <div>
+                <p>Información de autores</p>
+            </div>
+            <div>
+                <p><a href="css-adaptable.pdf">Documentación CSS</a></p>
+            </div>
+            <div>
+                <p>Copyright</p>
+            </div>
+        </div>
+        <div class="contacto-reducido">
+            <div class="fila">
+                <img src="img/contacto.png" alt="Datos de Contacto">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

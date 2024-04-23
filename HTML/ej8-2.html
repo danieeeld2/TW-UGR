@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- El uso de disabled puede tener sentidocuando quieres mostrar un campo a un usuario, pero no quieres que 
+    ese valor se envíe al formulario. Esto puede ser útil en formularios donde algunos campos son informatvios o dependientes
+    de la lógica de negocio y no requieren ser procesador en el servidor-->
+    <!-- Por otro lado, readonly solo se puede usar en inputs de texto, como text, date... ya que no tiene sentido
+    que se pueda leer solo en una parte donde el usuario tiene que marcar casillas-->
+    <section>
+        <h2>Registro de Usuarios</h2>
+        <form action="procesar.php" method="get" >
+            <p>
+                <label for="idnombre">Nombre:</label>
+                <input type="text" id="idnombre" name="nombre" placeholder="Este campo es obligatorio" required pattern="^[A-Z][a-zA-Z]*$" value="Javier" readonly>
+            </p>
+            <p>
+                <label for="idapellidos">Apellidos:</label>
+                <input type="text" id="idapellidos" name="apellidos" placeholder="Este campo es opcional" pattern="^[A-Z][a-zA-Z]*$" value="Martínez" readonly>
+            </p>
+            <p>
+                <label for="idclave">Clave de acceso:</label>
+                <input type="password" id="idclave" name="clave" placeholder="Introduzca una clave" value="miclave" readonly>
+            </p>
+            <p>
+                <label for="idnacionalidad">Nacionalidad:</label>
+                <input type="text" id="idnacionalidad" name="nacionalidad" value="España" readonly>
+            </p>
+            <p>
+                <label for="idemail">E-mail:</label>
+                <input type="email" id="idemail" name="email" value="javiermartinez@ugr.es" readonly>
+            </p>
+            <p>
+                <label>Sexo:
+                <select name="sexo" disabled>
+                    <option value="masculino" selected>Masculino</option>
+                    <!-- No tiene sentido mantener opciones que no se van a mostrar, ya que el campo esta descativado, por lo
+                        que se prodrian eliminar las siguientes opciones: -->
+                    <option>Femenino</option>
+                    <option selected>No deseo responder</option> 
+                </select></label>
+            </p>
+            <p>
+                <label>Tratamiento de datos:
+                    <select name="tratamiento" disabled>
+                        <option value="TOTAL" selected>Acepta el almacenamiento de mis datos y el envío a terceros</option>
+                        <!-- No tiene sentido mantener opciones que no se van a mostrar, ya que el campo esta descativado, por lo
+                        que se prodrian eliminar las siguientes opciones: -->
+                        <option value="PARCIAL">Acepta el almacenamiento de mis datos pero no el envío a terceros</option>
+                        <option value="NINGUNO">No acepta el almacenamiento ni el envío de datos a terceros</option> 
+                    </select></label>
+            </p>
+            <!-- En radio y checkbox podriamos eliminar los inputs sin checked, ya que al estar desactivados, no aportan nada-->
+            <div id="idioma">
+                <p>Idioma para comunicaciones:</p>
+                <label><input type="radio" name="idioma-comunicacion" value="español" disabled/>Español</label>
+                <label><input type="radio" name="idioma-comunicacion" value="ingles" checked disabled/>Inglés</label>
+                <label><input type="radio" name="idioma-comunicacion" value="frances"disabled/>Francés</label>
+            </div>
+            <div id="preferencia-habitacion">
+                <p>Preferencia de habitación:</p>
+                <label><input type="checkbox" name="preferencia[]" value="fumadores" disabled/>Para fumadores</label>
+                <label><input type="checkbox" name="preferencia[]" value="mascotas" checked disabled/>Que permita mascotas</label>
+                <label><input type="checkbox" name="preferencia[]" value="vistas" checked disabled/>Con vistas</label>
+                <label><input type="checkbox" name="preferencia[]" value="moqueta" disabled/>Con moqueta</label>
+            </div>
+            <p>
+                <label for="nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="nacimiento" name="fecha-nacimiento" value="2000-01-01" readonly>
+            </p>
+            <p>
+                <label for="visita">Semana preferida para su visita:</label>
+                <input type="week" id="visita" name="semana-visita" value="2024-W18" readonly>
+            </p>
+            <p><input type="hidden" name="version_formulario" value="2.0"/></p>
+            <!-- Podemos ver que los campos disabled no se envian al servidor -->
+            <p><input type="submit" value="Enviar datos"></p>
+        </form>
+    </section>
+</body>
+</html>
