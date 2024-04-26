@@ -175,8 +175,75 @@ footer a:hover {
 .tabla-reserva {
     margin: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-self: center;
+    border: 1px solid black;
+}
+
+:root {
+    --first-column-width: 28%;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: var(--first-column-width) 1fr;
+    align-items: center;
+}
+
+.table-body {
+    display: grid;
+    grid-template-columns: repeat(2, calc(var(--first-column-width)/2)) repeat(9, 1fr);
+    align-items: center;
+}
+
+.table-fila {
+    display: grid;
+    grid-column: 1 / -1;
+}
+
+.table-footer {
+    display: grid;
+    grid-template-columns: var(--first-column-width) repeat(9, 1fr);
+    align-items: center;
+
+}
+
+.tabla-reserva span {
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.oculto{
+    border: 1px solid black;
+    user-select: none;
+    color:transparent;
+}
+
+.rowspan { 
+    user-select: none;
+    color:transparent;
+}
+
+#boton-menos1,
+#boton-mas1 {
+    border-bottom: none;
+    border-top: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#boton-menos1-medio,
+#boton-mas1-medio {
+    user-select: all;
+    color:black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
 }
 
 /* -------------------*/
@@ -186,6 +253,7 @@ fieldset {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
+    background-color: #f0ece5;
 }
 
 legend {
