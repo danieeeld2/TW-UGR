@@ -139,6 +139,7 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
         }
     } else {
         $preferencia = "";
+        $preferencias = array();
     }
 
     // El tratamiento de datos es obligatorio y debe ser uno de los 3 valores permitidos
@@ -156,11 +157,13 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
 
     // Si no hay errores, mostramos los datos y el mensaje de confirmación
     if(empty($errores)){
-        $texto_recibido = "<h2 class='datos-recibidos'>Los datos recibidos son los siguientes</h2>";
+        $texto_recibido = "<h2 class='datos-recibidos'>Los datos se han recibido correctamente</h2>";
         $submit = "Confirmar datos";
+        $disable = "disabled";
     } else {
         $texto_recibido = "";
         $submit = "Enviar datos";
+        $disable = "";
     }
 } else {
     // Si no se ha enviado el formulario, inicializamos las variables
@@ -179,6 +182,8 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
     $tratamiento = "TOTAL";
     $submit =  "Enviar datos";
     $texto_recibido = "";
+    $disable = ""; 
+    $preferencias = array();
 }
 
 ?>
@@ -232,12 +237,12 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
                             <legend>Datos personales</legend>
                             <p>
                                 <label for="idnombre">Nombre:</label>
-                                <input type="text" id="idnombre" name="nombre" placeholder="(Obligatorio)" value="<?php echo $nombre ?>">
+                                <input type="text" id="idnombre" name="nombre" placeholder="(Obligatorio)" value="<?php echo $nombre ?>" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["nombre"])) echo $errores["nombre"] ?>
                             <p>
                                 <label for="idapellidos">Apellidos:</label>
-                                <input type="text" id="idapellidos" name="apellidos" value="<?php echo $apellidos ?>">
+                                <input type="text" id="idapellidos" name="apellidos" value="<?php echo $apellidos ?>" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["apellidos"])) echo $errores["apellidos"] ?>
                             <p>
@@ -246,22 +251,22 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
                             </p>
                             <p>
                                 <label for="dni">DNI:</label>
-                                <input type="text" id="dni" name="dni" value="<?php echo $dni ?>">
+                                <input type="text" id="dni" name="dni" value="<?php echo $dni ?>" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["dni"])) echo $errores["dni"] ?>
                             <p>
                                 <label for="nacimiento">F. nacimiento:</label>
-                                <input type="date" id="nacimiento" name="fecha-nacimiento" value="<?php echo $fechaNacimiento ?>" >
+                                <input type="date" id="nacimiento" name="fecha-nacimiento" value="<?php echo $fechaNacimiento ?>"  <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["fecha-nacimiento"])) echo $errores["fecha-nacimiento"] ?>
                             <p>
                                 <label for="idnacionalidad">Nacionalidad:</label>
-                                <input type="text" id="idnacionalidad" name="nacionalidad" value="<?php echo $nacionalidad ?>">
+                                <input type="text" id="idnacionalidad" name="nacionalidad" value="<?php echo $nacionalidad ?>" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["nacionalidad"])) echo $errores["nacionalidad"] ?>
                             <p>
                                 <label id="sexo">Sexo:
-                                <select name="sexo">
+                                <select name="sexo" <?php echo $disable ?>>
                                     <option <?php if($sexo == "Masculino") echo "selected"; ?>>Masculino</option>
                                     <option <?php if($sexo == "Femenino") echo "selected"; ?>>Femenino</option>
                                     <option <?php if($sexo == "No deseo responder") echo "selected"; ?>>No deseo responder</option>
@@ -273,17 +278,17 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
                             <legend>Datos de acceso</legend>
                             <p>
                                 <label for="idemail">E-mail:</label>
-                                <input type="email" id="idemail" name="email" value="<?php echo $email ?>">
+                                <input type="email" id="idemail" name="email" value="<?php echo $email ?>" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["email"])) echo $errores["email"] ?>
                             <p>
                                 <label for="idclave">Clave de acceso:</label>
-                                <input type="password" id="idclave" name="clave" value="<?php echo $clave ?>" placeholder="Introduzca una clave">
+                                <input type="password" id="idclave" name="clave" value="<?php echo $clave ?>" placeholder="Introduzca una clave" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["clave"])) echo $errores["clave"] ?>
                             <p>
                                 <label for="idclave2">Repita la clave:</label>
-                                <input type="password" id="idclave2" name="clave-repetida" value="<?php echo $claveRepetida ?>" placeholder="Introduzca la misma clave">
+                                <input type="password" id="idclave2" name="clave-repetida" value="<?php echo $claveRepetida ?>" placeholder="Introduzca la misma clave" <?php echo $disable ?>>
                             </p>
                             <?php if(isset($errores["clave-repetida"])) echo $errores["clave-repetida"] ?>
                         </fieldset>
@@ -291,23 +296,23 @@ if(isset($_GET['submit']) && $_SERVER["REQUEST_METHOD"] == "GET"){
                             <legend>Preferencias</legend>
                             <div id="idioma">
                                 <p>Idioma para comunicaciones:</p>
-                                <label><input type="radio" name="idioma-comunicacion" value="español" <?php if($idiomaComunicacion == "español") echo "checked"; ?>/>Español</label>
-                                <label><input type="radio" name="idioma-comunicacion" value="ingles" <?php if($idiomaComunicacion == "ingles") echo "checked"; ?>/>Inglés</label>
-                                <label><input type="radio" name="idioma-comunicacion" value="frances" <?php if($idiomaComunicacion == "frances") echo "checked"; ?>/>Francés</label>
+                                <label><input type="radio" name="idioma-comunicacion" value="español" <?php if($idiomaComunicacion == "español") echo "checked"; ?> <?php echo $disable ?>/>Español</label>
+                                <label><input type="radio" name="idioma-comunicacion" value="ingles" <?php if($idiomaComunicacion == "ingles") echo "checked"; ?> <?php echo $disable ?>/>Inglés</label>
+                                <label><input type="radio" name="idioma-comunicacion" value="frances" <?php if($idiomaComunicacion == "frances") echo "checked"; ?> <?php echo $disable ?>/>Francés</label>
                                 <?php if(isset($errores["idioma-comunicacion"])) echo $errores["idioma-comunicacion"] ?>
                             </div>
                             <div id="preferencia-habitacion">
                                 <p>Preferencia de habitación:</p>
-                                <label><input type="checkbox" name="preferencia[]" value="fumadores" <?php  if(in_array("fumadores", $preferencias)) echo "checked"; ?>/>Para fumadores</label>
-                                <label><input type="checkbox" name="preferencia[]" value="mascotas" <?php  if(in_array("mascotas", $preferencias)) echo "checked"; ?>/>Que permita mascotas</label>
-                                <label><input type="checkbox" name="preferencia[]" value="vistas" <?php  if(in_array("vistas", $preferencias)) echo "checked"; ?>/>Con vistas</label>
-                                <label><input type="checkbox" name="preferencia[]" value="moqueta" <?php  if(in_array("moqueta", $preferencias)) echo "checked"; ?>/>Con moqueta</label>
+                                <label><input type="checkbox" name="preferencia[]" value="fumadores" <?php  if(in_array("fumadores", $preferencias)) echo "checked"; ?> <?php echo $disable ?>/>Para fumadores</label>
+                                <label><input type="checkbox" name="preferencia[]" value="mascotas" <?php  if(in_array("mascotas", $preferencias)) echo "checked"; ?> <?php echo $disable ?>/>Que permita mascotas</label>
+                                <label><input type="checkbox" name="preferencia[]" value="vistas" <?php  if(in_array("vistas", $preferencias)) echo "checked"; ?> <?php echo $disable ?>/>Con vistas</label>
+                                <label><input type="checkbox" name="preferencia[]" value="moqueta" <?php  if(in_array("moqueta", $preferencias)) echo "checked"; ?> <?php echo $disable ?>/>Con moqueta</label>
                                 <?php if(isset($errores["preferencia"])) echo $errores["preferencia"] ?>
                             </div>
                         </fieldset>
                         <p>
                             <label>Tratamiento de datos:
-                                <select name="tratamiento">
+                                <select name="tratamiento" <?php echo $disable ?>>
                                     <option value="TOTAL" <?php if($tratamiento == "TOTAL") echo "selected"; ?>>Acepta el almacenamiento de mis datos y el envío a terceros</option>
                                     <option value="PARCIAL" <?php if($tratamiento == "PARCIAL") echo "selected"; ?>>Acepta el almacenamiento de mis datos pero no el envío a terceros</option>
                                     <option value="NINGUNO" <?php if($tratamiento == "NINGUNO") echo "selected"; ?>>No acepta el almacenamiento ni el envío de datos a terceros</option>
