@@ -246,6 +246,18 @@ footer a:hover {
     border-bottom: 0px;
 }
 
+/* ------------------- */
+
+.ejercicio15 {
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    overflow-x: auto; /* Hace que la barra de desplazamiento horizontal aparezca cuando la tabla sea más ancha que el contenedor */
+    overflow-y: auto; /* Hace que la barra de desplazamiento vertical aparezca cuando la tabla sea más alta que el contenedor */
+    max-width: 100%; /* Para asegurarse de que la tabla no se desborde en pantallas más pequeñas */
+    max-height: 100%; /* Para asegurarse de que la tabla no se desborde en pantallas más pequeñas */
+}
+
 /* -------------------*/
 
 fieldset {

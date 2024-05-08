@@ -25,11 +25,8 @@ function generarFORM()
         </header>
         <nav>
             <ul>
-                <li><a href="ej14-inicio.html">Inicio</a></li>
-                <li><a href="ej14-habitaciones.html">Habitaciones</a></li>
-                <li><a href="ej14-servicios.html">Servicios</a></li>
-                <li><a href="ej14-reservas.html">Reservas</a></li>
-                <li><a href="ej14-datos.html">Datos</a></li>
+                <li><a href="ej15.php">Reservas</a></li>
+                <li><a href="ej15Consultas.php">Consultas</a></li>
             </ul>
             <ul class="sesion-pantalla-reducida">
                 <li><a href="">LogIn</a></li>
@@ -139,7 +136,12 @@ function generarFORM()
                                 if(isset($_SESSION["datos"]["correcto"])){
                                     echo "<input type='submit' value='Confirmar Datos' name='confirmar' id='boton-enviar'>";
                                 }
-                                else echo "<input type='submit' value='Eviar Datos' name='enviar' id='boton-enviar'>";
+                                else if(isset($_SESSION["modificar"])) {
+                                    echo "<input type='submit' value='Modificar Datos' name='enviar' id='boton-enviar'>";
+                                }
+                                else {
+                                    echo "<input type='submit' value='Enviar Datos' name='enviar' id='boton-enviar'>";
+                                }
                                 ?>
                                 
                             </div>
