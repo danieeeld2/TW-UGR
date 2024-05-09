@@ -1,7 +1,7 @@
 <?php
 function generarTabla()
 { ?>
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="es">
 
     <head>
@@ -39,12 +39,19 @@ function generarTabla()
 
         <div class="container">
             <div class="main">
+                <div class="paginacion">
+                    <form action="" methos="get">
+                        <label for="N-Tuplas">Número de Tuplas</label>
+                        <input type="number" name="N-Tuplas" id="N-Tuplas">
+                        <input type="submit" value="Mostrar" name="Tuplas">
+                    </form>
+                </div>
                 <div class="ejercicio15">
-                <?php 
-                    if(isset($_SESSION["usuarios"]) && $_SESSION["usuarios"] != null){
+                    <?php
+                    if (isset($_SESSION["usuarios"]) && $_SESSION["usuarios"] != null) {
                         echo "<table border='1'>";
                         echo "<tr><th>Nombre</th><th>Apellidos</th><th>DNI</th><th>Fecha de Nacimiento</th><th>Nacionalidad</th><th>Sexo</th><th>Email</th><th>Clave</th><th>Idioma</th><th>Preferencia</th><th>Tratamiento de Datos</th><th>Borrar</th><th>Modificar</th></tr>";
-                        while($fila = $_SESSION["usuarios"]->fetch_assoc()) {
+                        while ($fila = $_SESSION["usuarios"]->fetch_assoc()) {
                             echo "<tr>";
                             echo "<td>" . $fila["Nombre"] . "</td>";
                             echo "<td>" . $fila["Apellidos"] . "</td>";
@@ -68,7 +75,16 @@ function generarTabla()
                     } else {
                         echo "<p>No hay usuarios registrados</p>";
                     }
-                ?>
+                    ?>
+                </div>
+                <div class="paginas">
+                    <?php if ($_SESSION["pagina"] > 1) : ?>
+                        <a href="?pagina=<?php echo $_SESSION["pagina"] - 1; ?>&N-Tuplas=<?php echo $_SESSION["tuplas"]?>">Anterior</a>
+                    <?php endif; ?>
+
+                    <?php if ($_SESSION["pagina"] < $_SESSION['total-paginas']) : ?>
+                        <a href="?pagina=<?php echo $_SESSION["pagina"] + 1; ?>&N-Tuplas=<?php echo $_SESSION["tuplas"]?>">Siguiente</a>
+                    <?php endif; ?>
                 </div>
             </div>
 

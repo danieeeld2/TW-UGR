@@ -258,6 +258,13 @@ footer a:hover {
     max-height: 100%; /* Para asegurarse de que la tabla no se desborde en pantallas más pequeñas */
 }
 
+.paginacion {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 5px;
+}
+
 /* -------------------*/
 
 fieldset {

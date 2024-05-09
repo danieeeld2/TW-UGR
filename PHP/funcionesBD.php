@@ -117,5 +117,26 @@ function modificar_usuario($conexion, $datos, $id) {
     return true;
 }
 
+// Funcion para obtener el total de tuplas
+function obtener_total_tuplas($conexion) {
+    $query = "SELECT COUNT(*) as total FROM usuarios";
+    $resultado = $conexion->query($query);
+    if(!$resultado) {
+        // Si la ejecución de la consulta falla, se puede manejar el error aquí
+        echo "Error al ejecutar la consulta: " . $conexion->error;
+        return null;
+    }
+    $total = $resultado->fetch_assoc();
+    return $total['total'];
+}
+
+// Obtener usuarios paginados
+function obtener_usuarios_paginados($conexion, $offset, $limit) {
+    $query = "SELECT * FROM usuarios LIMIT ?, ?";
+    $stmt = $conexion->prepare($query);
+    $stmt->bind_param("ii", $offset, $limit);
+    $stmt->execute();
+    return $stmt->get_result();
+}
 
 ?>

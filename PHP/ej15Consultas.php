@@ -16,6 +16,15 @@ if(isset($_SESSION['datos'])) {
     unset($_SESSION['datos']);
 }
 
+// Definir número de tuplas por página
+$_SESSION['tuplas'] = isset($_GET['N-Tuplas']) ? $_GET['N-Tuplas'] : 10;
+$_SESSION['pagina'] = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
+$_SESSION['offset'] = ($_SESSION['pagina'] - 1) * $_SESSION['tuplas'];
+
+// Obtener el total de tuplas
+$_SESSION['total-tuplas'] = obtener_total_tuplas($conexion);
+$_SESSION['total-paginas'] = ceil($_SESSION['total-tuplas'] / $_SESSION['tuplas']);
+
 if(isset($_POST['borrar']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     borrar_usuario($conexion, $_POST['id']);
     // Redireccionamos a la misma página pero con GET para evitar que se vuelva a enviar el formulario
@@ -41,7 +50,7 @@ if(isset($_POST['modificar']) && $_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$_SESSION["usuarios"] = obtener_usuarios($conexion);
+$_SESSION["usuarios"] = obtener_usuarios_paginados($conexion, $_SESSION['offset'], $_SESSION['tuplas']);
 desconectar_bbdd($conexion);
 
 generarTabla();
