@@ -95,12 +95,12 @@ function generarFORM()
                                 <?php if (isset($_SESSION["errores"]["email"])) echo $_SESSION["errores"]["email"] ?>
                                 <p>
                                     <label for="idclave">Clave de acceso:</label>
-                                    <input type="password" id="idclave" name="clave" value="<?php if (isset($_SESSION["datos"]["clave"])) echo $_SESSION["datos"]["clave"] ?>" placeholder="Introduzca una clave" <?php echo $disable ?>>
+                                    <input type="password" id="idclave" name="clave" value="<?php if (isset($_SESSION["datos"]["clave"])) echo $_SESSION["datos"]["clave"] ?>" placeholder="Introduzca una clave" <?php if(isset($_SESSION["modificar"])) echo "readonly"; else echo $disable ?>>
                                 </p>
                                 <?php if (isset($_SESSION["errores"]["clave"])) echo $_SESSION["errores"]["clave"] ?>
                                 <p>
                                     <label for="idclave2">Repita la clave:</label>
-                                    <input type="password" id="idclave2" name="clave-repetida" value="<?php if (isset($_SESSION["datos"]["clave-repetida"])) echo $_SESSION["datos"]["clave-repetida"] ?>" placeholder="Introduzca la misma clave" <?php echo $disable ?>>
+                                    <input type="password" id="idclave2" name="clave-repetida" value="<?php if (isset($_SESSION["datos"]["clave-repetida"])) echo $_SESSION["datos"]["clave-repetida"] ?>" placeholder="Introduzca la misma clave" <?php if(isset($_SESSION["modificar"])) echo "readonly"; else echo $disable ?>>
                                 </p>
                                 <?php if (isset($_SESSION["errores"]["clave-repetida"])) echo $_SESSION["errores"]["clave-repetida"] ?>
                             </fieldset>

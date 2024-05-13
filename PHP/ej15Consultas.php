@@ -41,8 +41,9 @@ if(isset($_POST['modificar']) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['datos']["sexo"] = $resultado["Sexo"];
     $_SESSION['datos']["email"] = $resultado["Email"];
     $_SESSION['datos']["clave"] = $resultado["Clave"];
+    $_SESSION['datos']["clave-repetida"] = $resultado["Clave"];
     $_SESSION['datos']["idioma-comunicacion"] = $resultado["Idioma"];
-    $_SESSION['datos']["preferencia"] = $resultado["Preferencia"];
+    $_SESSION['datos']["preferencias"] = explode(",", $resultado["Preferencia"]);
     $_SESSION['datos']["tratamiento"] = $resultado["TratamientoDatos"];
     $_SESSION["id"] = $resultado["id"];
     $_SESSION['modificar'] = true;

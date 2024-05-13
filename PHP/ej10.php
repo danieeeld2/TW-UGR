@@ -4,8 +4,8 @@ session_start();
 // Verificamos si se solicita borrar la sesión
 if(isset($_POST['borrar_sesion'])){
     session_unset(); // Elimina todas las variables de sesión
-    header("Location: ".$_SERVER['SCRIPT_NAME']); // Redirecciona para volver a cargar la página
-    exit;
+    // Eliminar $_POST
+    $_POST = array();
 }
 
 // Verificamos si el usuario proporcionó un nombre

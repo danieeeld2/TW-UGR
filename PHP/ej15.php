@@ -24,7 +24,6 @@ if(isset($_GET['confirmar']) && $_SERVER["REQUEST_METHOD"] == "GET") {
     unset($_SESSION["datos"]);
     unset($_SESSION["errores"]);
     unset($_SESSION["id"]);
-    header( "Location: {$_SERVER['SCRIPT_NAME']}", true, 303);
 }
 
 generarFORM();

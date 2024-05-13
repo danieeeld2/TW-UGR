@@ -11,10 +11,12 @@ function insertar_usuario($conexion, $datos) {
         echo "Error al preparar la consulta: " . $conexion->error;
         return false;
     }
+    // Encriptamos clave
+    $datos['clave'] = password_hash($datos['clave'], PASSWORD_DEFAULT);
     // Bind de los parámetros 
     $stmt->bind_param("sssssssssss", $datos['nombre'], $datos['apellidos'], 
     $datos['dni'], $datos['fecha-nacimiento'], $datos['nacionalidad'], 
-    $datos['sexo'], $datos['email'], password_hash($datos['clave'], PASSWORD_DEFAULT), $datos['idioma-comunicacion'], 
+    $datos['sexo'], $datos['email'], $datos['clave'], $datos['idioma-comunicacion'], 
     $datos['preferencia'], $datos['tratamiento']);
     // Ejecución de la consulta
     $resultado = $stmt->execute();
@@ -102,7 +104,7 @@ function modificar_usuario($conexion, $datos, $id) {
     // Bind de los parámetros
     $stmt->bind_param("sssssssssssi", $datos['nombre'], $datos['apellidos'], 
     $datos['dni'], $datos['fecha-nacimiento'], $datos['nacionalidad'], 
-    $datos['sexo'], $datos['email'], password_hash($datos['clave'], PASSWORD_DEFAULT), $datos['idioma-comunicacion'], 
+    $datos['sexo'], $datos['email'], $datos['clave'] , $datos['idioma-comunicacion'], 
     $datos['preferencia'], $datos['tratamiento'], $id);
 
     // Ejecución de la consulta
